@@ -26,6 +26,14 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- JavaScript -->
+    <script src="search.js"></script>
+
 </head>
 <body>
 	<div class="container-fluid">
@@ -56,7 +64,7 @@
 		<form action="#" method="get">
 			<div class="row search" style="margin-top: 20px">
 				<div class="col-8">
-					<input autocomplete="on" size="80" class="form-control">
+					<input autocomplete="on" size="80" class="form-control" id="search_term">
 				</div>
 				<div class="col-2">
 					<button type="button" class="btn btn-info">Search</button>
@@ -66,20 +74,41 @@
 		<hr>
 		<div class="row">
 			<div class="col">
+				<span class="align-middle">Sort &nbsp;&nbsp;&nbsp;<button type="button" class="btn" id="sort_alpha_up"><i class="fas fa-sort-alpha-down"></i></button> <button type="button" class="btn" id="sort_alpha_down"><i class="fas fa-sort-alpha-up"></i></button></span>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col" id="list_of_festivals">
 				<?php
 					// include "search.php";
 				?>
-				<div class="card">
+				<div class="card" id="card_0">
 					<!-- <span style="display:inline-block;"> -->
 					<div class="row">
 						<div class="col-s-6 col-md-4">
 							<img src="https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981" style="height: 200px; width: 200px;">
 						</div>
-						<div class="col film-card">
-							<h5 class="card-title">Festival Name</h5>
+						<div class="col card-contents">
+							<h5 class="card-title">b Festival Name</h5>
 							<p class="card-text">Short description</p>
 							<div style="position:absolute; bottom:20px;"><a class="btn btn-secondary" href="festival.php?id=1">Details</a></div>
 						</div>
+					</div>
+				</div>
+				<!-- <br> -->
+				<div class="card" id="card_0">
+					<!-- <span style="display:inline-block;"> -->
+					<div class="row">
+						<div class="col-s-6 col-md-4">
+							<img src="https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981" style="height: 200px; width: 200px;">
+						</div>
+						<div class="col card-contents">
+							<h5 class="card-title">a Festival Name</h5>
+							<p class="card-text">Short description</p>
+							<div style="position:absolute; bottom:20px;"><a class="btn btn-secondary" href="festival.php?id=1">Details</a></div>
+						</div>
+					</div>
 				</div>
 					<!-- </span> -->
 					<!-- <div class="card-body" style="display:inline-block;">
