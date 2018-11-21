@@ -33,10 +33,10 @@
 
 		$( '#filter' ).change( function() {
 			$( '#filter_term' ).removeAttr("hidden");
-			$( '#filter_submit' ).removeAttr("hidden");
+			$( '#filter_button' ).removeAttr("hidden");
 		})
 
-		$( '#filter_submit' ).click( function() {
+		$( '#filter_button' ).click( function() {
 			var input = $( '#filter_term' );
 
 			$.ajax({
@@ -52,5 +52,20 @@
 				$(this).html(data);
 			});
 		});
+
+		$( '#search_button' ).click( function() {
+			var input = $( '#search_term' );
+
+			$.ajax({
+				url: "search.php",
+				context: $( '#list_of_festivals' ),
+				data: {
+					'search_term': input.val()
+				}
+			})
+			.done( function(data) {
+				$(this).html(data);
+			});
+		})
 	});
 })(jQuery);

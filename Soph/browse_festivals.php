@@ -61,16 +61,16 @@
 		</nav>
 	</div>
 	<div class="container">
-		<form action="#" method="get">
+		<!-- <form action="#" method="get"> -->
 			<div class="row search" style="margin-top: 20px">
 				<div class="col-8">
-					<input autocomplete="on" size="80" class="form-control" id="search_term">
+					<input size="80" class="form-control" id="search_term">
 				</div>
 				<div class="col-2">
-					<button type="button" class="btn btn-info">Search</button>
+					<button type="button" class="btn btn-info" id="search_button">Search</button>
 				</div>
 			</div>
-		</form>
+		<!-- </form> -->
 		<hr>
 		<div class="row">
 			<div class="col-3">
@@ -82,14 +82,14 @@
 					 <div class="col">
 					 	<select class="custom-select" id="filter">
 							<option disabled selected value> - Select a filter - </option>
-							<option value="country">Country</option>
+							<option value="location">Location</option>
 						</select>
 					</div>
 					<div class="col">
 						<input type="text" class="form-control" id="filter_term" hidden>
 					</div>
 				<!-- </forn> -->
-					<button type="button" class="btn btn-light" id="filter_submit" hidden>Filter</button>
+					<button type="button" class="btn btn-light" id="filter_button" hidden>Filter</button>
 				</div>
 			</div>
 		</div>
