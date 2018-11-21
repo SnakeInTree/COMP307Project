@@ -29,8 +29,8 @@
 			$pic = $film['icon']; 				// Fill column name
 
 			echo "<div class='card' " . "id='card_" . $film['id_festival'] . "'><div class='row'><div class='col-s-6 col-md-4'>";
-			echo "<img sr='" . $pic . "' style='height: 200px; width: 200px;'></div>";
-			echo "<div class='col film-card'>";
+			echo "<img src='" . $pic . "' style='height: 200px; width: 200px;'></div>";
+			echo "<div class='col card-contents'>";
 			echo "<h5 class='card-title'>" . $name . "</h5>";
 			echo "<p class='card-text'>" . $descr . "</p>";
 			echo "<div style='position:absolute; bottom:20px;'><a class='btn btn-secondary' href='festival.php?id=" . $film['id_festival'] . "'>Details</a></div></div></div>";
@@ -38,9 +38,15 @@
 		}
 	}
 
-
-
-	
-
-
 ?>
+
+
+
+
+
+
+
+
+
+
+

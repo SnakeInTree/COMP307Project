@@ -30,5 +30,27 @@
 			$( '#sort_alpha_up' ).removeClass("btn-secondary");
 			$( '#sort_alpha_down' ).addClass("btn-secondary");
 		});
+
+		$( '#filter' ).change( function() {
+			$( '#filter_term' ).removeAttr("hidden");
+			$( '#filter_submit' ).removeAttr("hidden");
+		})
+
+		$( '#filter_submit' ).click( function() {
+			var input = $( '#filter_term' );
+
+			$.ajax({
+				url: "filter.php",
+				context: $( '#list_of_festivals' ),
+				data: {
+					'filter_type': $( '#filter' ).val(), 
+					'filter_term': input.val()
+				}
+			})
+			.done(	function(data) {
+				// $(this).append(data);
+				$(this).html(data);
+			});
+		});
 	});
 })(jQuery);

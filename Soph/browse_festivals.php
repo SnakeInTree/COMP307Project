@@ -7,8 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="browse_page.css">
 
 	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<!-- BOOTSTRAP 3 -->
 	<!-- Latest compiled and minified CSS -->
 	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -23,7 +23,7 @@
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -73,8 +73,24 @@
 		</form>
 		<hr>
 		<div class="row">
-			<div class="col">
-				<span class="align-middle">Sort &nbsp;&nbsp;&nbsp;<button type="button" class="btn" id="sort_alpha_up"><i class="fas fa-sort-alpha-down"></i></button> <button type="button" class="btn" id="sort_alpha_down"><i class="fas fa-sort-alpha-up"></i></button></span>
+			<div class="col-3">
+				Sort &nbsp;&nbsp;&nbsp;<button type="button" class="btn" id="sort_alpha_up"><i class="fas fa-sort-alpha-down"></i></button> <button type="button" class="btn" id="sort_alpha_down"><i class="fas fa-sort-alpha-up"></i></button>
+			</div>
+			<div class="col-9">
+				<!-- <forn> -->
+				<div class="form-group row">
+					 <div class="col">
+					 	<select class="custom-select" id="filter">
+							<option disabled selected value> - Select a filter - </option>
+							<option value="country">Country</option>
+						</select>
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="filter_term" hidden>
+					</div>
+				<!-- </forn> -->
+					<button type="button" class="btn btn-light" id="filter_submit" hidden>Filter</button>
+				</div>
 			</div>
 		</div>
 		<hr>
@@ -109,13 +125,6 @@
 							<div style="position:absolute; bottom:20px;"><a class="btn btn-secondary" href="festival.php?id=1">Details</a></div>
 						</div>
 					</div>
-				</div>
-					<!-- </span> -->
-					<!-- <div class="card-body" style="display:inline-block;">
-						<h5 class="card-title">Festival Name</h5>
-						<p class="card-text">Short description</p>
-						<a href="#" class="btn btn-secondary">See details</a>
-					</div> -->
 				</div>
 			</div>
 		</div>
