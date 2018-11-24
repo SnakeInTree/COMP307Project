@@ -1,0 +1,89 @@
+<canvas id="canvas2" width="800" height="440"></canvas>
+<br>
+<canvas id="canvas" width="800" height="440"></canvas>
+
+<script>
+var img = new Image();
+var img2 = new Image();
+
+img.src = 'http://142.157.11.83/logo2.jpg';  //adjust URLs to the correct directory
+img2.src = 'http://142.157.11.83/logo1.jpg';
+var canvasX = 800;
+var canvasY = 430;
+var speed = 5;
+var scale = 1.05;
+var y = -4.5;
+
+var dx = 0.75;
+var width;
+var height;
+var x = 0;
+var xx = 0;
+var clearX;
+var clearY;
+var canv;
+var canv2;
+
+img.onload = function() {
+    width = img.width * scale;
+    height = img.height * scale;
+    
+    if (width > canvasX) {
+        x = canvasX - width;
+        xx = canvasX - width;
+    }
+    if (width > canvasX) {
+        clearX = width;
+    } else {
+        clearX = canvasX;
+    }
+    if (height > canvasY) {
+        clearY = height;
+    } else {
+        clearY = canvasY;
+    }
+    
+    canv = document.getElementById('canvas').getContext('2d');
+    canv2 = document.getElementById('canvas2').getContext('2d');
+ 
+    return setInterval(draw, speed);
+}
+
+function draw() {
+    canv.clearRect(0, 0, clearX, clearY);
+    canv2.clearRect(0, 0, clearX, clearY);
+    
+    if (width <= canvasX) {
+        if (x > canvasX) {
+            x = -width + x;
+            xx = -width + x;
+        }
+
+        if (x > 0) {
+            canv.drawImage(img, -width + x, y, width, height);
+            canv2.drawImage(img2, -width + x, y, width, height);
+        }
+
+        if (x - width > 0) {
+            canv.drawImage(img, -width * 2 + x, y, width, height);
+            canv2.drawImage(img2, -width * 2 + x, y, width, height);
+        }
+    }
+
+    else {
+        if (x > (canvasX)) {
+            x = canvasX - width;
+            xx = canvasX - width;
+        }
+        if (x > (canvasX-width)) {
+            canv.drawImage(img, x - width + 1, y, width, height);
+            canv2.drawImage(img2, xx + width + 0, y, width, height);
+        }
+    }
+    canv.drawImage(img, x, y,width, height);
+    canv2.drawImage(img2, xx, y,width, height);
+
+    x += dx;
+    xx -= dx;
+}
+</script>
