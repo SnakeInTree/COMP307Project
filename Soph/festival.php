@@ -52,15 +52,25 @@
 			<div class="col">
 				<div style="margin-top: 20px">
 					<?php 
-						// include "connect_db.php";
-						if (is_null($_GET['id']) || $_GET['id'] == '') {
-							echo "Festival not found!";
-							exit();
-						}
-
-						// Get the film information to display 
-						$name = "Festival Name";
-
+						// include "get_festival.php"
+						$name = "Festival name";
+						$about = "About section";
+						$type = "Festival type";
+						$contact = "Contact info";
+						$email = "Contact email";
+						$fb = "Facebook";
+						$twitter = "Twitter";
+						$rules = "Rules";
+						$awards = "Awards";
+						$deadlines = "Deadlines"; // array
+						$dates = "Dates"; 	// array
+						$categories = "Categories";	// array
+						$fees = "Fees"; 			// array
+						$venue = "Venue";
+						$website = "Website";
+						$years = "Years running";
+						$picture = "https://www.raindance.org/wp-content/uploads/2017/12/eyqxosovr4aq7u5fhzys-1080x675.jpg";
+						$icon = "https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981";
 
 					?>
 					<h3><?php echo $name;?></h3>
@@ -68,5 +78,39 @@
 				<hr>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col">
+				<img src="<?php echo $picture?>">
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-3">
+				<img src="<?php echo $icon?>" style="height: 200px; width: 200px;">
+			</div>
+			<div class="col-9"  style="padding: 20px 30px">
+				<h6>About</h6>
+				<p><?php echo $about; ?></p>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-3" style="padding: 20px 30px">
+				<h6>Festival Type</h6>
+				<p><?php echo $type;?></p>
+				<hr>
+				<h6>Contact Information</h6>
+				<p><?php echo $email;?></p>
+				<p><?php echo $contact;?></p>
+			</div>
+			<hr>
+			<div class="col-9" style="padding: 20px 30px">
+				<h6>Awards & Prizes</h6>
+				<p><?php echo $awards;?></p>
+				<hr>
+				<h6>Rules & Conditions</h6>
+				<p><?php echo $rules;?></p>
+			</div>
+
 	</div>
 </body>
