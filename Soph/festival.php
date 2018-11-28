@@ -53,24 +53,24 @@
 				<div style="margin-top: 20px">
 					<?php 
 						// include "get_festival.php"
-						$name = "Festival name";
-						$about = "About section";
-						$type = "Festival type";
-						$contact = "Contact info";
-						$email = "Contact email";
-						$fb = "Facebook";
-						$twitter = "Twitter";
-						$rules = "Rules";
-						$awards = "Awards";
-						$deadlines = "Deadlines"; // array
-						$dates = "Dates"; 	// array
-						$categories = "Categories";	// array
-						$fees = "Fees"; 			// array
-						$venue = "Venue";
-						$website = "Website";
-						$years = "Years running";
-						$picture = "https://www.raindance.org/wp-content/uploads/2017/12/eyqxosovr4aq7u5fhzys-1080x675.jpg";
-						$icon = "https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981";
+						// $name = "Festival name";
+						// $about = "About section";
+						// $type = "Festival type";
+						// $contact = "Contact info";
+						// $email = "Contact email";
+						// $fb = "Facebook";
+						// $twitter = "Twitter";
+						// $rules = "Rules";
+						// $awards = "Awards";
+						// $deadlines = array("Early", "Soft deadline", "Hard deadline"); // array
+						// $dates = array("September", "October", "November"); 	// array
+						// $categories = array("Horror", "Thriller", "Sci-fi");	//"Categories";	// array
+						// $fees = array(50, 60, 70); 			// array
+						// $venue = "Venue";
+						// $website = "Website";
+						// $years = "Years running";
+						// $picture = "https://www.raindance.org/wp-content/uploads/2017/12/eyqxosovr4aq7u5fhzys-1080x675.jpg";
+						// $icon = "https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981";
 
 					?>
 					<h3><?php echo $name;?></h3>
@@ -104,13 +104,27 @@
 				<p><?php echo $contact;?></p>
 			</div>
 			<hr>
-			<div class="col-9" style="padding: 20px 30px">
+			<div class="col-6" style="padding: 20px 30px">
 				<h6>Awards & Prizes</h6>
 				<p><?php echo $awards;?></p>
 				<hr>
 				<h6>Rules & Conditions</h6>
 				<p><?php echo $rules;?></p>
 			</div>
-
+			<div class="col-3" style="padding: 20px 30px">
+				<h6>Categories & Fees</h6>
+				<p><?php 
+					for ($i = 0; $i < count($categories); $i++) {
+						echo $categories[$i] . " " . $fees[$i] . "<br />";
+					}
+				?></p>
+				<hr>
+				<h6>Dates & Deadlines</h6>
+				<p><?php
+					for ($i = 0; $i < count($categories); $i++) {
+						echo $deadlines[$i] . " " . $dates[$i] . "<br />";
+					}
+				?></p>
+			</div>
 	</div>
 </body>
