@@ -37,7 +37,14 @@
 		})
 
 		$( '#filter_button' ).click( function() {
-			var input = $( '#filter_term' );
+			$( '#filter_error' ).html("");
+			var input = $( '#filter_term' ).val();
+			if (!input) {
+				$( '#filter_error' ).html("Please enter a filter term");
+				$( '#filter_term' ).focus();
+				return;
+			}
+
 
 			$.ajax({
 				url: "filter.php",
@@ -54,8 +61,13 @@
 		});
 
 		$( '#search_button' ).click( function() {
-			var input = $( '#search_term' );
-
+			$( '#search_error' ).html("");
+			var input = $( '#search_term' ).val();
+			if (!input) {
+				$( '#search_error' ).html("Please enter a search term");
+				$( '#search_term' ).focus();
+				return;
+			}
 			$.ajax({
 				url: "search.php",
 				context: $( '#list_of_festivals' ),

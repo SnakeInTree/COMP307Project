@@ -65,6 +65,7 @@
 			<div class="row search" style="margin-top: 20px">
 				<div class="col-8">
 					<input size="80" class="form-control" id="search_term">
+					<small id="search_error" style="color:red"></small>
 				</div>
 				<div class="col-2">
 					<button type="button" class="btn btn-info" id="search_button">Search</button>
@@ -87,6 +88,7 @@
 					</div>
 					<div class="col">
 						<input type="text" class="form-control" id="filter_term" hidden>
+						<small style="color:red" id="filter_error"></small>
 					</div>
 				<!-- </forn> -->
 					<button type="button" class="btn btn-light" id="filter_button" hidden>Filter</button>
@@ -99,34 +101,6 @@
 				<?php
 					// include "search.php";
 				?>
-				<div class="card" id="card_0">
-					<!-- <span style="display:inline-block;"> -->
-					<div class="row">
-						<div class="col-s-6 col-md-4">
-							<img src="https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981" style="height: 200px; width: 200px;">
-						</div>
-						<div class="col card-contents">
-							<h5 class="card-title">b Festival Name</h5>
-							<p class="card-text">Short description</p>
-							<div style="position:absolute; bottom:20px;"><a class="btn btn-secondary" href="festival.php?id=1">Details</a></div>
-						</div>
-					</div>
-				</div>
-				<!-- <br> -->
-				<div class="card" id="card_0">
-					<!-- <span style="display:inline-block;"> -->
-					<div class="row">
-						<div class="col-s-6 col-md-4">
-							<img src="https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981" style="height: 200px; width: 200px;">
-						</div>
-						<div class="col card-contents">
-							<h5 class="card-title">a Festival Name</h5>
-							<p class="card-text">Short description</p>
-							<div style="position:absolute; bottom:20px;"><a class="btn btn-secondary" href="festival.php?id=1">Details</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 <body>
