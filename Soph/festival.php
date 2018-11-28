@@ -53,24 +53,24 @@
 				<div style="margin-top: 20px">
 					<?php 
 						// include "get_festival.php"
-						// $name = "Festival name";
-						// $about = "About section";
-						// $type = "Festival type";
-						// $contact = "Contact info";
-						// $email = "Contact email";
-						// $fb = "Facebook";
-						// $twitter = "Twitter";
-						// $rules = "Rules";
-						// $awards = "Awards";
-						// $deadlines = array("Early", "Soft deadline", "Hard deadline"); // array
-						// $dates = array("September", "October", "November"); 	// array
-						// $categories = array("Horror", "Thriller", "Sci-fi");	//"Categories";	// array
-						// $fees = array(50, 60, 70); 			// array
-						// $venue = "Venue";
-						// $website = "Website";
-						// $years = "Years running";
-						// $picture = "https://www.raindance.org/wp-content/uploads/2017/12/eyqxosovr4aq7u5fhzys-1080x675.jpg";
-						// $icon = "https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981";
+						$name = "Festival name";
+						$about = "About section";
+						$type = "Festival type";
+						$contact = "Contact info";
+						$email = "Contact email";
+						$fb = "Facebook";
+						$twitter = "Twitter";
+						$rules = "Rules";
+						$awards = "Awards";
+						$deadlines = array("Opening Date", "Application Deadline", "Notification Date", "Event Date"); // array
+						$dates = array("August", "September", "October", "November"); 	// array
+						$categories = array("Feature", "Short Film", "Student", "Screenplay");	//"Categories";	// array
+						$fees = array(0, 60, 70, 0); 			// array
+						$venue = "Venue";
+						$website = "Website";
+						$years = "Years running";
+						$picture = "https://www.raindance.org/wp-content/uploads/2017/12/eyqxosovr4aq7u5fhzys-1080x675.jpg";
+						$icon = "https://storage.googleapis.com/ff-storage-p01/festivals/logos/000/001/589/large/logo.jpg?1537117981";
 
 					?>
 					<h3><?php echo $name;?></h3>
@@ -78,7 +78,7 @@
 				<hr>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="height: 400px; overflow: hidden">
 			<div class="col">
 				<img src="<?php echo $picture?>">
 			</div>
@@ -113,18 +113,24 @@
 			</div>
 			<div class="col-3" style="padding: 20px 30px">
 				<h6>Categories & Fees</h6>
-				<p><?php 
+				<table>
+				<?php 
 					for ($i = 0; $i < count($categories); $i++) {
-						echo $categories[$i] . " " . $fees[$i] . "<br />";
+						if ($fees[$i] != 0) {
+							echo "<tr><td>" . $categories[$i] . "</td><td>" . $fees[$i] . "</td>";
+						}
 					}
-				?></p>
+				?>
+				</table>
 				<hr>
 				<h6>Dates & Deadlines</h6>
-				<p><?php
-					for ($i = 0; $i < count($categories); $i++) {
-						echo $deadlines[$i] . " " . $dates[$i] . "<br />";
+				<table>
+				<?php
+					for ($i = 0; $i < count($deadlines); $i++) {
+						echo "<tr><td>" . $deadlines[$i] . "</td><td>" . $dates[$i] . "</td>";
 					}
-				?></p>
+				?>
+				</table>
 			</div>
 	</div>
 </body>
