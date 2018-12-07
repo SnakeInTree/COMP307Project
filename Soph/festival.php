@@ -1,3 +1,10 @@
+<?php 
+	// Script contains function with parameters as memberid and film id
+	// Script contains function to check wither member has that film in their favourites already , aparameters memberid and film id
+
+	// For testing purposes, the above results are sset as static variables here 
+	$favourite = false;
+?>
 
 <!DOCTYPE html>
 <head>
@@ -21,6 +28,15 @@
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="festival.js"></script>
+    <style type="text/css">
+    	.collapsible_content {
+    		display:none;
+    	}
+
+    </style>
 </head>
 <body>
 	<div class="container-fluid" style="padding-left: 0px; padding-right: 0px">
@@ -87,6 +103,21 @@
 		<div class="row">
 			<div class="col-3">
 				<img src="<?php echo $icon?>" style="height: 200px; width: 200px;">
+				<button type="button" class="btn btn-outline-info" id="favourite_button" style=" position:relative; left:15%; width:100%" onclick="addFavourite(<?php
+					// echo member id 
+					// echo film id 
+
+					?>)"<?php 
+						if ($favourite) {
+							echo " disabled";
+						}
+					?>><?php 
+						if ($favourite) { 
+							echo "Favourited";
+						} else {
+							echo "Favourite";
+						}
+					?></button>
 			</div>
 			<div class="col-9"  style="padding: 20px 30px">
 				<h6>About</h6>
@@ -112,25 +143,29 @@
 				<p><?php echo $rules;?></p>
 			</div>
 			<div class="col-3" style="padding: 20px 30px">
-				<h6>Categories & Fees</h6>
-				<table>
-				<?php 
-					for ($i = 0; $i < count($categories); $i++) {
-						if ($fees[$i] != 0) {
-							echo "<tr><td>" . $categories[$i] . "</td><td>" . $fees[$i] . "</td>";
+				<button type="button" class="btn">Categories & Fees</button>
+				<div class="collapsible_content">
+					<table>
+					<?php 
+						for ($i = 0; $i < count($categories); $i++) {
+							if ($fees[$i] != 0) {
+								echo "<tr><td>" . $categories[$i] . "</td><td>" . $fees[$i] . "</td>";
+							}
 						}
-					}
-				?>
-				</table>
+					?>
+					</table>
+				</div>
 				<hr>
-				<h6>Dates & Deadlines</h6>
-				<table>
-				<?php
-					for ($i = 0; $i < count($deadlines); $i++) {
-						echo "<tr><td>" . $deadlines[$i] . "</td><td>" . $dates[$i] . "</td>";
-					}
-				?>
-				</table>
+				<button type="button" class="btn">Dates & Deadlines</button>
+				<div class="collapsible_content">
+					<table>
+					<?php
+						for ($i = 0; $i < count($deadlines); $i++) {
+							echo "<tr><td>" . $deadlines[$i] . "</td><td>" . $dates[$i] . "</td>";
+						}
+					?>
+					</table>
+				</div>
 			</div>
 	</div>
 </body>

@@ -1,8 +1,4 @@
-<?php 
 
-	include "display_user_cards.php";
-
-?>
 <!DOCTYPE html>
 <head>
 	<!-- Style sheet -->
@@ -55,26 +51,7 @@
 			      	<li class="nav-item">
 			      		<a class="nav-link" href="#">About</a>
 			      	</li>
-			      	<?php 
-			      		if ($loggedin) {
-			      			?>
-			      				<li class="nav-item">
-			      					<a class="nav-link" href="my_festivals.php">My Festivals</a>
-			      				</li>
-			      			<?php
-			      		}
-			      	?>
-			      	<li class="nav-item">
-						<a class="nav-link" href="<?php 
-			      			if () echo "login_page.php"; 
-							else echo "account.php";?>"><?php 
-			      				if (!$loggedin) {
-									echo "Login"; 
-			      				} else {
-									echo "Logout";
-
-			      				}?></a> 
-			      	</li>
+			      	
 				</ul>
 			</div>
 		</nav>
@@ -119,7 +96,8 @@
 		<div class="row">
 			<div class="col" id="list_of_festivals">
 				<?php
-					// include "search.php";
+					// include "display_user_cards.php";
+					// include "get_festivals.php";	// Script will use the member id passed in session variable to get the member's favourited festivals
 				?>
 				
 			</div>
